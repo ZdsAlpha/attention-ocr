@@ -26,7 +26,7 @@ def generate(annotations_path, output_path, log_step=5000,
     longest_label = ''
     idx = 0
 
-    with open(annotations_path, 'r') as annotations:
+    with open(annotations_path, 'r', encoding="utf-8-sig") as annotations:
         for idx, line in enumerate(annotations):
             line = line.rstrip('\n')
 
