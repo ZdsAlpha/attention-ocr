@@ -5,7 +5,7 @@ import re
 
 import tensorflow as tf
 
-from six import b
+from six import b, u
 
 
 def _bytes_feature(value):
@@ -49,7 +49,7 @@ def generate(annotations_path, output_path, log_step=5000,
 
             feature = {}
             feature['image'] = _bytes_feature(img)
-            feature['label'] = _int64_feature(b(label))
+            feature['label'] = _int64_feature(u(label))
             if save_filename:
                 feature['comment'] = _bytes_feature(b(img_path))
 
