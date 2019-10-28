@@ -86,8 +86,8 @@ class DataGen(object):
         if sys.version_info >= (3,):
             lex = lex.decode('iso-8859-1')
 
-        assert len(lex) < self.bucket_specs[-1][1]
         print(self.bucket_specs)
+        assert len(lex) < self.bucket_specs[-1][1]
 
         return np.array(
             [self.GO_ID] + [self.CHARMAP.index(char) for char in lex] + [self.EOS_ID],
