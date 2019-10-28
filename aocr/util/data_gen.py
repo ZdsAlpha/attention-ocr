@@ -87,6 +87,7 @@ class DataGen(object):
             lex = lex.decode('iso-8859-1')
 
         assert len(lex) < self.bucket_specs[-1][1]
+        print(self.bucket_specs)
 
         return np.array(
             [self.GO_ID] + [self.CHARMAP.index(char) for char in lex] + [self.EOS_ID],
